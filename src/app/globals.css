@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-leaf-50: #f0fdf4;
+  --color-leaf-100: #dcfce7;
+  --color-leaf-200: #bbf7d0;
+  --color-leaf-500: #22c55e;
+  --color-leaf-600: #16a34a;
+  --color-leaf-700: #15803d;
+  --color-leaf-800: #166534;
+  --color-leaf-900: #14532d;
+  --color-peel-50: #fff7ed;
+  --color-peel-100: #ffedd5;
+  --color-peel-500: #f97316;
+  --color-peel-600: #ea580c;
+  --color-peel-700: #c2410c;
+  --color-cream: #fbfaf6;
+  --color-ink: #1f2a1f;
+  --color-line: #e7e5df;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --shadow-soft: 0 1px 2px rgb(31 42 31 / 0.04), 0 8px 24px -12px rgb(31 42 31 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(31 42 31 / 0.05), 0 16px 40px -16px rgb(31 42 31 / 0.25);
+}
+
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink antialiased; }
+::selection { background: #bbf7d0; }
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60; }
+@utility btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-leaf-800 text-white hover:bg-leaf-900 shadow-soft; }
+@utility btn-accent { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-peel-600 text-white hover:bg-peel-700 shadow-soft; }
+@utility btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-white text-ink border border-line hover:border-leaf-500 hover:text-leaf-800; }
+@utility btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 text-ink hover:bg-leaf-50; }
+@utility btn-danger { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-leaf-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 bg-red-600 text-white hover:bg-red-700; }
+@utility btn-sm { @apply px-3 py-1.5 text-xs rounded-lg; }
+@utility input { @apply block w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-gray-400 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-leaf-100 disabled:bg-gray-50; }
+@utility label { @apply mb-1.5 block text-sm font-medium text-ink; }
+@utility card { @apply rounded-2xl border border-line bg-white shadow-soft; }
+@utility badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+@utility link { @apply font-medium text-leaf-800 underline-offset-4 hover:underline; }
+
+@layer components {
+  .prose-sm p { margin-bottom: 0.75rem; }
+  .table { width: 100%; text-align: left; font-size: 0.875rem; }
+  .table th { padding: 0.5rem 0.75rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; border-bottom: 1px solid var(--color-line); }
+  .table td { padding: 0.75rem; border-bottom: 1px solid var(--color-line); vertical-align: middle; }
+}
+
+@keyframes fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.animate-fade-up { animation: fade-up .35s ease-out both; }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.animate-float { animation: float 5s ease-in-out infinite; }

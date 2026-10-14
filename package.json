@@ -1,0 +1,45 @@
+{
+  "name": "fruitly-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fruitly — fresh fruit e-commerce store built on Harakumo (Edge SQLite, Storage, Mail, Payments, AI)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "harakumo:setup": "tsx scripts/harakumo-setup.mts",
+    "harakumo:deploy": "tsx scripts/harakumo-upload.mts",
+    "harakumo:deploy:git": "tsx scripts/harakumo-deploy.mts",
+    "harakumo:env": "tsx scripts/harakumo-env.mts",
+    "db:migrate": "tsx scripts/migrate.mts",
+    "db:seed": "tsx scripts/seed.mts",
+    "db:query": "tsx scripts/query.mts",
+    "admin:promote": "tsx scripts/promote-admin.mts",
+    "db:sourcing": "tsx scripts/set-sourcing.mts"
+  },
+  "dependencies": {
+    "jose": "^6.2.9",
+    "lucide-react": "^1.33.0",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "better-sqlite3": "^12.11.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.2": true
+  }
+}
